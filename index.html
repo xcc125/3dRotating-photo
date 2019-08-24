@@ -1,0 +1,83 @@
+<!DOCTYPE html><!--声明文档类型-->
+<html lang="en"><!--存放网页的所有内容  html-->
+<head><!--网页的基本信息，给浏览器看的,搜索引擎，返回给用户-->
+    <meta charset="UTF-8"><!--设置字符集为万国码  可以识别200多个国家语言  主要防止网页产生乱码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><!--网页名字-->
+    <style>/*用来修饰标签  存放css样式*/
+         body{
+            margin:0px;
+        }
+        .wrap{
+            width: 200px;
+            height: 200px;
+            margin:200px auto 0;/*上 左右 下*/
+            perspective:800px;/*视线的距离*/
+        }
+        .wrap .cube{
+            width: 200px;
+            height: 200px;
+            transform-style:preserve-3d;
+            transform: rotateX(0deg);/*rotateX围着X轴转，y就为这y轴旋转，z就为这z轴旋转*/
+            transition: 2s;
+        }
+        .cube:hover{
+            transform:rotateX(360deg);
+        }
+        .wrap .cube .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transition:transform 1s;
+        }
+        .wrap .cube .top{
+            transform:rotateX(90deg) translateZ(105px);
+            background: url(img/3.jpg);
+            background-size: 200px;
+        }
+        .wrap .cube .bottom{
+            transform:rotateX(-90deg) translateZ(105px);
+            background: url(img/4.jpg);
+            background-size: 200px;
+        }
+        .wrap .cube .front{
+            transform:translateZ(105px) ;
+            background: url(img/5.jpg);
+            background-size: 200px;
+        }
+        .wrap .cube .back{
+            transform:translateZ(-105px) ;
+            background: url(img/6.jpg);
+            background-size: 200px;
+        }
+        .wrap .cube .left{
+            transform:rotateY(90deg)   translateZ(105px);
+            background: url(img/7.jpg);
+            background-size: 200px;
+        }
+        .wrap .cube .right{ 
+            transform:rotateY(90deg) translateZ(105px);
+            background: url(img/8.jpg);
+            background-size: 200px;
+        }
+
+    </style>
+</head>
+<body><!--存放网页的主题内容 显示 给用户看-->
+    <div class="wrap">
+        <div class="cube">
+            <div class="box top"></div>
+            <div class="box bottom"></div>
+            <div class="box front"></div>
+            <div class="box back"></div>
+            <div class="box left"></div>
+            <div class="box right"></div>
+        </div>
+    </div>
+</body>
+</html>  
+<!-- 标签就是元素，元素就是标签
+1.标签 搭建 网页结构  是透明的   没有显示样式
+2.css  装修标签  打扮标签
+ -->
